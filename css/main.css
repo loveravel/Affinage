@@ -70,3 +70,23 @@ input[type="radio"].visually-hidden {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
+/* Logotype */
+
+.logo {
+  font-size: 34px;
+  text-decoration: none;
+  color: #131212;
+  transition: 0.3s;
+}
+
+.logo:hover,
+.logo:focus {
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+.logo:active {
+  opacity: 0.4;
+  transition: 0.3s;
+}
