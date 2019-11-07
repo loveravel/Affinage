@@ -1,15 +1,41 @@
 /* Font Connection */
 
+/* Geometria */
+
 @font-face {
-  font-family: "Geometria Regular";
-  src: url('../fonts/Geometria/Geometria.woff2') format('woff2'),
+  font-family: 'Geometria Regular';
+  src: local('Geometria Regular'),
+  url('../fonts/Geometria/Geometria.woff2') format('woff2'),
   url('../fonts/Geometria/Geometria.woff') format('woff');
+}
+
+/* Philosopher */
+
+@font-face {
+  font-family: 'Philosopher Regular';
+  src: local('Philosopher Regular'),
+  url('../fonts/Philosopher/Philosopher-Regular.woff2') format('woff2'),
+  url('../fonts/Philosopher/Philosopher.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Philosopher Bold';
+  src: local('Philosopher Bold'),
+  url('../fonts/Philosopher/Philosopher-Bold.woff2') format('woff2'),
+  url('../fonts/Philosopher/Philosopher-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Philosopher Italic';
+  src: local('Philosopher Italic'),
+  url('../fonts/Philosopher/Philosopher-Italic.woff2') format('woff2'),
+  url('../fonts/Philosopher/Philosopher-Italic.woff') format('woff');
 }
 
 /* Scaffolding */
 
 body {
-  font-family: "Geometria Regular", sans-serif;
+  font-family: "Philosopher Regular", sans-serif;
   font-weight: 400;
   margin: 0;
   padding: 0;
