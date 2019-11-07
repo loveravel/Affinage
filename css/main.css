@@ -71,28 +71,9 @@ input[type="radio"].visually-hidden {
   overflow: hidden;
 }
 
-/* Page Header */
-
-.page-header {
-  background-color: #F7E611;
-}
-
-.page-header__wrapper {
-  display: flex;
-  justify-content: space-between;
-  width: 320px;
-  margin: 0 auto;
-  padding-top: 9px;
-}
-
-.page-header__logo {
-  margin-left: 20px;
-}
-
-.page-header__nav {
-  margin-top: 8px;
-  margin-right: 20px;
-}
+/*
+* Blocks
+*/
 
 /* Logotype */
 
@@ -136,4 +117,129 @@ input[type="radio"].visually-hidden {
   position: absolute;
   top: 4px;
   left: 0;
+}
+
+/* Slider */
+
+.slider {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.slider__images {
+  display: flex;
+  flex-direction: column;
+}
+
+.slider__image-box {
+  margin: 0;
+  padding: 0;
+}
+
+.slider__image {
+  position: relative;
+  vertical-align: top;
+  object-fit: cover;
+}
+
+.slider__image--current {
+  margin-top: -17px;
+}
+
+.slider__image--prev {
+  left: -45px;
+}
+
+/* Controls */
+
+.controls__button {
+  position: absolute;
+  z-index: 10;
+  bottom: 143px;
+  width: 25px;
+  height: 25px;
+  border: none;
+  border-left: 4px solid rgba(0, 0, 0, 0.4);
+  border-bottom: 4px solid rgba(0, 0, 0, 0.4);
+  background-color: transparent;
+  transition: 0.5s ease;
+}
+
+.controls__button--prev {
+  left: 25px;
+  transform: rotate(45deg);
+}
+
+.controls__button--next {
+  right: 25px;
+  transform: rotate(-135deg);
+}
+
+.controls__button:hover,
+.controls__button:focus {
+  border-color: #131212;
+  transition: 0.5s ease;
+}
+
+/*
+* Containers
+*/
+
+/* General */
+
+.page-header,
+.hero {
+  background-color: #F7E611;
+}
+
+.page-header__wrapper,
+.hero__wrapper {
+  min-width: 320px;
+  margin: 0 auto;
+}
+
+/* Page Header */
+
+.page-header {
+  padding-bottom: 35px;
+}
+
+.page-header__wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 9px;
+}
+
+.page-header__logo {
+  margin-left: 20px;
+}
+
+.page-header__nav {
+  margin-top: 8px;
+  margin-right: 20px;
+}
+
+/* Hero Section */
+
+.hero__wrapper {
+  position: relative;
+}
+
+.hero__title,
+.hero__theme {
+  display: none;
+}
+
+.hero__tagline {
+  font-family: 'Philosopher Italic', sans-serif;
+  font-size: 9px;
+  font-weight: 400;
+  font-style: italic;
+  position: absolute;
+  z-index: 10;
+  left: -19px;
+  top: 157px;
+  transform: rotate(-90deg);
+  opacity: 0.5;
 }
