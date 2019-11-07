@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,11 +11,30 @@
 <body>
   <header class="page-header">
     <a href="#" class="page-header__logo">A</a>
+    <nav class="page-header__nav nav">
+      <button class="nav__toggle">
+        <span class="visually-hidden">Open site naviagtion</span>
+      </button>
+    </nav>
   </header>
   <main>
-    <h1 class="visually-hidden">Main page Affinage</h1>
-    <section class="promo">
-
+    <h1 class="visually-hidden">Main page "Affinage"</h1>
+    <section class="hero">
+      <h2 class="hero__title">Affinage</h2>
+      <span class="hero__theme">тестовое задание</span>
+      <strong class="hero__tagline">очень хороший слоган</strong>
+      <div class="hero__slider slider">
+        <img src="" alt="slide" class="slider__image slider__image--first">
+        <img src="" alt="slide" class="slider__image slider__image--second">
+        <div class="slider__controls controls">
+          <button class="controls__button controls__button--prev">
+            <span class="visually-hidden">Previuos slide</span>
+          </button>
+          <button class="controls__button controls__button--next">
+              <span class="visually-hidden">Next slide</span>
+          </button>
+        </div>
+      </div>
     </section>
   </main>
 
