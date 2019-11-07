@@ -90,3 +90,27 @@ input[type="radio"].visually-hidden {
   opacity: 0.4;
   transition: 0.3s;
 }
+
+/* Navigation */
+
+.nav__toggle {
+  position: relative;
+  height: 14px;
+  border: none;
+  border-bottom: 2px solid #000000;
+  background-color: transparent;
+}
+
+.nav__toggle,
+.nav__toggle::before {
+  width: 20px;
+  box-sizing: border-box;
+  border-top: 2px solid #000000;
+}
+
+.nav__toggle::before {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 0;
+}
