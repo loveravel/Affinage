@@ -271,3 +271,14 @@ input[type="radio"].visually-hidden {
   transform: rotate(-90deg);
   opacity: 0.5;
 }
+
+.hero__wreath {
+  position: absolute;
+  z-index: 100;
+  bottom: -13px;
+  left: 50%;
+  width: 160px;
+  height: 80px;
+  transform: scale(0.68) translateX(-118px);
+  fill: #131212;
+}
