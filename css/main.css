@@ -106,6 +106,26 @@ input[type="radio"].visually-hidden {
   overflow: hidden;
 }
 
+/* Animations */
+
+@keyframes slidein {
+  from {
+    margin-right: 100%;
+    width: 0%;
+  }
+
+  to {
+    margin-right: 0%;
+    width: 100%;
+  }
+}
+
+.slidein {
+  animation-duration: 0.5s;
+  animation-name: slidein;
+  animation-timing-function: ease-in;
+}
+
 /*
 * Blocks
 */
