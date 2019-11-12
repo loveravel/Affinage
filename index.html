@@ -27,7 +27,12 @@
       <nav class="page-header__nav nav">
         <button class="nav__toggle">
           <span class="visually-hidden">Open site naviagtion</span>
-          <svg class="nav__wreath">
+          <svg
+            class="nav__wreath"
+            width="160"
+            height="160"
+            viewBox="0 0 160 160"
+          >
             <use xlink:href="#wreath" x="0" y="0"/>
           </svg>
         </button>
@@ -61,18 +66,25 @@
               alt="slide"
               >
             </picture>
-            <picture class="slider__image-box slider__image-box--current">
-              <source
-                media="(min-width: 1440px)"
-                srcset="img/photo.jpg"
-              >
-              <img class="slider__image slider__image--current"
-                src="img/photo.jpg"
-                width="558"
-                height="318"
-                alt="slide"
-              >
-            </picture>
+            <div class="slider__image-box slider__image-box--current">
+              <div class="slider__image-name image-name">
+                <p class="image-name__title">Ural</p>
+                <span class="image-name__subtitle">03</span>
+              </div>
+              <picture>
+                <source
+                  media="(min-width: 1440px)"
+                  srcset="img/photo.jpg"
+                >
+                <img class="slider__image slider__image--current"
+                  src="img/photo.jpg"
+                  width="558"
+                  height="318"
+                  alt="slide"
+                >
+              </picture>
+            </div>
+
           </div>
           <div class="slider__counter counter">
             <span class="counter__max">13</span>
@@ -87,11 +99,12 @@
             </button>
           </div>
         </div>
-        <div class="hero__wreath">
+        <div class="hero__wreath-box">
           <svg
+            class="hero__wreath"
             width="160"
-            height="80"
-            viewBox="0 0 160 80"
+            height="160"
+            viewBox="0 0 160 160"
           >
             <use xlink:href="#wreath" x="0" y="0"/>
           </svg>
