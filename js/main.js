@@ -1,48 +1,64 @@
 'use strict';
 
-const IMAGES = [
+const IMAGES_SRC = [
   'photo.jpg',
   'kaboompics_Modern.jpg',
   'kaboompics_Arc.jpg',
 ];
 
+const COUNT_IMAGES = IMAGES_SRC.length;
+
+const Images = {
+  MOBILE: document.querySelectorAll('.slider__image'),
+  DESKTOP: document.querySelectorAll('.slider__images source'),
+}
+
 const controls = document.querySelectorAll('.controls__button');
 
-let state = 0;
+const state = {
+  currentPhoto: 0,
+  prevPhoto: COUNT_IMAGES - 1,
+};
+
+const checkStateValue = (value) => {
+  if (value === COUNT_IMAGES) {
+    value = 0;
+  } else if (value < 0) {
+    value = COUNT_IMAGES - 1;
+  }
+
+  return value;
+}
 
 const switchPhotos = (control) => {
-  document.querySelectorAll('.slidein').forEach((it) => {
-    it.classList.remove('slidein');
+  Images.MOBILE.forEach((image) => {
+    image.classList.remove('slidein');
   });
 
-  control.classList.contains('controls__button--prev') ? state-- : state++;
-  console.log(state);
-
-  if (state === -1 || state === 0) {
-    state = IMAGES.length - 1;
-    document.querySelector('.slider__image--prev').src = `img/${IMAGES[state - 1]}`;
-    document.querySelector('.slider__image--current').src = `img/${IMAGES[state]}`;
-    document.querySelector('.slider__image-box--prev source').srcset = `img/${IMAGES[state - 1]}`;
-    document.querySelector('.slider__image-box--current source').srcset = `img/${IMAGES[state]}`;
-  } else if (state === IMAGES.length) {
-    state = 0;
-    document.querySelector('.slider__image--prev').src = `img/${IMAGES[IMAGES.length - 1]}`;
-    document.querySelector('.slider__image--current').src = `img/${IMAGES[state]}`;
-    document.querySelector('.slider__image-box--prev source').srcset = `img/${IMAGES[IMAGES.length - 1]}`;
-    document.querySelector('.slider__image-box--current source').srcset = `img/${IMAGES[state]}`;
+  if (control.classList.contains('controls__button--prev')) {
+    --state.currentPhoto;
+    --state.prevPhoto;
   } else {
-    document.querySelector('.slider__image--prev').src = `img/${IMAGES[state - 1]}`;
-    document.querySelector('.slider__image--current').src = `img/${IMAGES[state]}`;
-    document.querySelector('.slider__image-box--prev source').srcset = `img/${IMAGES[state - 1]}`;
-    document.querySelector('.slider__image-box--current source').srcset = `img/${IMAGES[state]}`;
+    ++state.currentPhoto;
+    ++state.prevPhoto;
   }
-  console.log(state);
-  console.log('-------');
 
+  state.currentPhoto = checkStateValue(state.currentPhoto);
+  state.prevPhoto = checkStateValue(state.prevPhoto);
+
+  for (let i = 0; i < Images.MOBILE.length; i++) {
+    if (Images.MOBILE[i].classList.contains('slider__image--prev')) {
+      Images.MOBILE[i].src = `img/${IMAGES_SRC[state.prevPhoto]}`;
+      Images.DESKTOP[i].srcset = `img/${IMAGES_SRC[state.prevPhoto]}`;
+    } else {
+      Images.MOBILE[i].src = `img/${IMAGES_SRC[state.currentPhoto]}`;
+      Images.DESKTOP[i].srcset = `img/${IMAGES_SRC[state.currentPhoto]}`;
+    }
+  }
 
   setTimeout(() => {
-    document.querySelectorAll('.slider__image').forEach((it) => {
-      it.classList.add('slidein');
+    document.querySelectorAll('.slider__image').forEach((image) => {
+      image.classList.add('slidein');
     });
   }, 0);
 };
