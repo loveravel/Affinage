@@ -1,7 +1,7 @@
 # Affinage
 
 This is a test task from the company Affinage.
-[Result](https://loveravel.github.io/affinage)
+[Result](https://loveravel.github.io/Affinage/)
 
 ## Task text
 
