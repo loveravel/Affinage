@@ -1,9 +1,9 @@
 'use strict';
 
 const IMAGES_SRC = [
-  'photo.jpg',
-  'kaboompics_Modern.jpg',
-  'kaboompics_Arc.jpg',
+  'photo',
+  'kaboompics_Modern',
+  'kaboompics_Arc',
 ];
 
 const COUNT_IMAGES = IMAGES_SRC.length;
@@ -48,11 +48,11 @@ const switchPhotos = (control) => {
 
   for (let i = 0; i < Images.MOBILE.length; i++) {
     if (Images.MOBILE[i].classList.contains('slider__image--prev')) {
-      Images.MOBILE[i].src = `img/${IMAGES_SRC[state.prevPhoto]}`;
-      Images.DESKTOP[i].srcset = `img/${IMAGES_SRC[state.prevPhoto]}`;
+      Images.MOBILE[i].src = `img/${IMAGES_SRC[state.prevPhoto]}-mobile.jpg`;
+      Images.DESKTOP[i].srcset = `img/${IMAGES_SRC[state.prevPhoto]}-desktop.jpg`;
     } else {
-      Images.MOBILE[i].src = `img/${IMAGES_SRC[state.currentPhoto]}`;
-      Images.DESKTOP[i].srcset = `img/${IMAGES_SRC[state.currentPhoto]}`;
+      Images.MOBILE[i].src = `img/${IMAGES_SRC[state.currentPhoto]}-mobile.jpg`;
+      Images.DESKTOP[i].srcset = `img/${IMAGES_SRC[state.currentPhoto]}-desktop.jpg`;
     }
   }
 
